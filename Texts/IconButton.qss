@@ -1,0 +1,24 @@
+/* For Icon Button */
+/* Set Custom IconFont */
+/* May Not Used In Program */
+
+QPushButton {
+    background-color: #ffffff;
+    border: 1px solid #E3E3E3;
+    border-radius: 5px;
+    font: 9pt "Segoe MDL2 Assets";
+}
+
+QPushButton::hover {
+    background-color: #F0F0F0;
+    border: 1px solid #E3E3E3;
+    border-radius: 5px;
+    font: 9pt "Segoe MDL2 Assets";
+}
+
+QPushButton:pressed, QPushButton:checked {
+    background-color: #ECECEC;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    font: 9pt "Segoe MDL2 Assets";
+}

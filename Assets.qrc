@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/handle.png</file>
+        <file>Images/handle_hover.png</file>
+        <file>Images/handle_basic.png</file>
+        <file>Texts/TabStyle.qss</file>
+        <file>Images/FMusic.ico</file>
+        <file>Fonts/Segoe_Fluent_Icons_IconFont.ttf</file>
+        <file>Texts/IconButton.qss</file>
+    </qresource>
+</RCC>
