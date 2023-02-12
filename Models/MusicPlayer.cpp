@@ -42,6 +42,7 @@ void MusicPlayer::Pause()
 void MusicPlayer::Next()
 {
     Pause();
+    slider->setValue(0);
 
     PlayerIndex++;
     if(PlayerIndex >= PlayList.size())
@@ -60,6 +61,7 @@ void MusicPlayer::Next()
 void MusicPlayer::Back()
 {
     Pause();
+    slider->setValue(0);
 
     PlayerIndex--;
     if(PlayerIndex < 0)
@@ -93,8 +95,9 @@ void MusicPlayer::AddMusic(const MusicInfo& info)
 
 void MusicPlayer::on_timer_count()
 {
-    if(!onStop)
+    if(!onStop && Player->duration() != 0) {
         slider->setValue(Player->position() * MAX_VALUE / Player->duration());
+    }
 }
 
 void MusicPlayer::on_slider_progress_sliderReleased()
@@ -112,6 +115,7 @@ void MusicPlayer::mediaStatusChanged(QMediaPlayer::MediaStatus status)
 {
     if(status == QMediaPlayer::MediaStatus::EndOfMedia)
     {
+        timer->stop();
         Next();
     }
 }

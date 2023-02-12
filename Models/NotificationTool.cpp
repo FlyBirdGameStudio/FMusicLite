@@ -1,5 +1,7 @@
 #include "NotificationTool.h"
 
+#include "UIControllers/ContextMenus/TaskBarContextMenu.h"
+
 QSystemTrayIcon* NotificationTool::icon;
 
 void NotificationTool::InitlizeIcon()
@@ -20,4 +22,13 @@ void NotificationTool::UninstallIcon()
 void NotificationTool::SendMsg(QString Title, QString Msg)
 {
     icon->showMessage(Title, Msg, icon->icon());
+}
+
+void NotificationTool::BindContextMenu()
+{
+    auto menu = new TaskBarContextMenu();
+    menu->BindUI(nullptr);
+    auto m = menu->GetMenu();
+
+    icon->setContextMenu(m);
 }

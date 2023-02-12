@@ -22,6 +22,7 @@ SOURCES += \
     NetWork/Actions/GetMusicInfoAction.cpp \
     NetWork/Actions/PlayMusicAction.cpp \
     NetWork/networkmanager.cpp \
+    UIConmponents/UIControlers/MuiscListCard.cpp \
     UIControllers/Album.cpp \
     UIControllers/HomePage.cpp \
     UIControllers/MyPage.cpp \
@@ -42,7 +43,10 @@ HEADERS += \
     NetWork/Actions/SearchMusicAction.h \
     NetWork/NetWorkAction.h \
     NetWork/networkmanager.h \
+    UIConmponents/UIControlers/MuiscListCard.h \
     UIControllers/Album.h \
+    UIControllers/ContextMenus/PlayerContextMenu.h \
+    UIControllers/ContextMenus/TaskBarContextMenu.h \
     UIControllers/HomePage.h \
     UIControllers/MainWindow.h\
     Models/MusicPlayer.h \
@@ -51,6 +55,7 @@ HEADERS += \
     UIControllers/SearchDisplay.h
 
 FORMS += \
+    UIConmponents/Views/MuiscListCard.ui \
     Views/Album.ui \
     Views/MyPage.ui \
     Views/PlayListPage.ui \
@@ -69,6 +74,7 @@ RESOURCES += \
     Assets.qrc
 
 DISTFILES += \
+    Texts/ContextMenu.qss \
     Texts/FUI3.qss \
     Texts/IconButton.qss \
     Texts/TabStyle.qss

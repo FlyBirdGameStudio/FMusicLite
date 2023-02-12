@@ -1,10 +1,9 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
-#include <QFile>
-
 #include "Models/NotificationTool.h"
 
+#include "UIControllers/ContextMenus/PlayerContextMenu.h"
 #include "UIControllers/HomePage.h"
 #include "UIControllers/SearchDisplay.h"
 #include "UIControllers/PlayListPage.h"
@@ -20,12 +19,16 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     /* SetUp Media Player */
+
     Player.reset(new MusicPlayer(ui->horizontalSlider));
     Player->BindInfoLabel(ui->TitleText);
     connect(Player.get(), &MusicPlayer::OnMusicPlayerStateChange, this, &MainWindow::OnMusicPlayerStateChange);
 
+
     /* Set Home Page */
+
     SetPage(new HomePage(this));
+
 
     /* OnFill Icon Font */
 
@@ -34,7 +37,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->nextmusic->setText(QChar(0xe893));
     ui->othermenu->setText(QChar(0xe712));
 
+
     /* OnRead Tab Bar Button Style Sheet */
+
     QFile file(":/Texts/TabStyle.qss");
     if(!file.open(QFile::ReadOnly))
         qDebug() << "Open Read TabStyle Sheet Error";
@@ -42,6 +47,11 @@ MainWindow::MainWindow(QWidget *parent)
     tab_styles = QString::fromUtf8(file.readAll()).split("#off_style");
     file.close();
 
+
+    /* SetUp Menus */
+
+    auto a = new PlayerContextMenu();
+    a->BindUI(ui->othermenu);
 }
 
 MainWindow::~MainWindow()
@@ -145,4 +155,25 @@ void MainWindow::OnMusicPlayerStateChange(const PlayerState &state)
     case PlayerState::OnStopped:
         break;
     }
+}
+
+void MainWindow::on_playbutton_clicked()
+{
+    if(ui->playbutton->text() == QChar(0xe769))
+    {
+        Player->Pause();
+    } else
+    {
+        Player->Play();
+    }
+}
+
+void MainWindow::on_periousmusic_clicked()
+{
+    Player->Back();
+}
+
+void MainWindow::on_nextmusic_clicked()
+{
+    Player->Next();
 }

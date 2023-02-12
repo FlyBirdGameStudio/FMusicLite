@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QWidget>
+#include <QFile>
 #include <iostream>
 
 #include "Models/MultiPageController.h"
@@ -33,6 +34,12 @@ private slots:
     void on_searchBox_returnPressed();
 
     void OnMusicPlayerStateChange(const PlayerState& state);
+
+    void on_playbutton_clicked();
+
+    void on_periousmusic_clicked();
+
+    void on_nextmusic_clicked();
 
 public:
     std::shared_ptr<MusicPlayer> Player;

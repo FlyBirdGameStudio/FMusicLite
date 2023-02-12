@@ -13,6 +13,161 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">
+
+#MainWindow {
+    background-color: rgb(238,238,238);
+}
+
+/* QPush Button Styles */
+
+QPushButton {
+    background-color: #ffffff;
+    border: 1px solid #E3E3E3;
+    border-radius: 5px;
+    font: 9pt &quot;Microsoft YaHei UI&quot;;
+}
+
+QPushButton::hover {
+    background-color: #F0F0F0;
+    border: 1px solid #E3E3E3;
+    border-radius: 5px;
+    font: 9pt &quot;Microsoft YaHei UI&quot;;
+}
+
+QPushButton:pressed, QPushButton:checked {
+    background-color: #ECECEC;
+    border: 1px solid #ECECEC;
+    border-radius: 5px;
+    font: 9pt &quot;Microsoft YaHei UI&quot;;
+}
+
+/* QSlider Component Styles */
+QSlider{
+    border-color: #ffffff;
+	border-top-color: rgb(255, 255, 255);
+}
+
+QSlider::groove:horizontal {                                
+     border: 1px solid #999999;                             
+     height: 1px;                                           
+    margin: 0px 0;                                         
+     left: 5px; right: 5px; 
+}
+
+QSlider::handle:horizontal {                               
+     border: 0px;
+     border-image: url(:/Images/handle_hover.png);
+     width: 15px;                                    
+     margin: -7px -7px -7px -7px;                  
+} 
+
+QSlider::add-page:horizontal{
+background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #bcbcbc, stop:0.25 #bcbcbc, stop:0.5 #bcbcbc, stop:1 #bcbcbc); 
+
+}
+
+QSlider::sub-page:horizontal{                               
+ background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #439cf3, stop:0.25 #439cf3, stop:0.5 #439cf3, stop:1 #439cf3);                     
+}
+
+QSlider::handle:horizontal:hover {
+     border: 0px;
+     border-image: url(:/Images/handle_hover.png);
+     width: 15px;                                           
+     margin: -7px -7px -7px -7px;      
+}
+
+/* QLine Edit Styles */
+
+QLineEdit {
+	border: 1px solid #E3E3E3;
+	border-radius: 5px;
+	padding-left: 5px; 
+	background-color: #FFFFFF;
+	selection-background-color: #A0A0A0; 
+	selection-color: #F2F2F2; 
+    font: 9pt &quot;Microsoft YaHei UI&quot;;
+}
+
+QLineEdit:hover { 
+	border: 1px solid #326CF3;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+	selection-background-color: #298DFF;
+	selection-color: #F2F2F2;
+}
+
+QLineEdit[echoMode=&quot;2&quot;] { 
+	lineedit-password-character: 9679;
+	lineedit-password-mask-delay: 2000;
+}
+
+QLineEdit:disabled {
+	border: 1px solid #CDCDCD;
+	background-color: #CDCDCD;
+	color: #B4B4B4;
+}
+
+QLineEdit:read-only {
+	background-color: #CDCDCD;
+	color: #F2F2F2;
+}
+
+/* QListWidget Styles */
+
+QListView {
+    outline: none;
+    border: 1.25px solid #E0E0E0;
+    border-radius: 5px;
+}
+
+QListView::item {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 5px;
+    padding: 7px;
+    margin: 2px;
+}
+
+QListView::item:hover {
+    background-color: rgba(238,238,238,240);
+}
+
+QListView::item:selected {
+    color: #ffffff;
+    background: rgb(50,108,243);
+}
+
+/* QLable Styles */
+
+QLabel {
+    font: 9pt &quot;Microsoft YaHei UI&quot;;
+}
+
+#title {
+    
+    font: 16pt &quot;Microsoft YaHei UI&quot;;
+}</string>
+  </property>
+  <widget class="QLabel" name="title">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>131</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+    font: 16pt &quot;Microsoft YaHei UI&quot;;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

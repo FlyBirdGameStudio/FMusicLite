@@ -1,2 +1,2 @@
 # FMusicLite
-A Beautiful &amp; Lite CrossPlatform Music Player
+A Beautiful &amp; Lite Weight CrossPlatform Music Player
